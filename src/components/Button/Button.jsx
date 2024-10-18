@@ -15,11 +15,12 @@ export const Button = ({
   disabled = false,
   size,
   className,
+  divClassName,
 }) => {
   return (
     <button className={`button disabled-${disabled} ${variant} ${className}`}>
       <div
-        className={`text-wrapper disabled-0-${disabled} variant-${variant} ${size}`}
+        className={`text-wrapper disabled-0-${disabled} variant-${variant} ${size} ${divClassName}`}
       >
         {label}
       </div>

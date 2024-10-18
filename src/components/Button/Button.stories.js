@@ -24,5 +24,6 @@ export const Default = {
     disabled: false,
     size: "medium",
     className: {},
+    divClassName: {},
   },
 };

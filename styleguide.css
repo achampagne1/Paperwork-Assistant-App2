@@ -1,30 +1,55 @@
 :root {
   --color-background-brand-default: var(--color-primitives-brand-800);
   --color-background-brand-hover: var(--color-primitives-brand-900);
+  --color-background-danger-default: var(--color-primitives-red-500);
+  --color-background-danger-hover: var(--color-primitives-red-600);
+  --color-background-danger-tertiary-hover: var(--color-primitives-red-200);
+  --color-background-default-default-hover: var(--color-primitives-gray-100);
+  --color-background-default-secondary: var(--color-primitives-gray-100);
+  --color-background-default-secondary-hover: var(--color-primitives-gray-200);
   --color-background-disabled-default: var(--color-primitives-brand-300);
   --color-background-neutral-tertiary: var(--color-primitives-slate-200);
   --color-background-neutral-tertiary-hover: var(--color-primitives-slate-300);
   --color-border-brand-default: var(--color-primitives-brand-800);
+  --color-border-danger-default: var(--color-primitives-red-700);
+  --color-border-danger-secondary: var(--color-primitives-red-600);
   --color-border-default-default: var(--color-primitives-gray-300);
   --color-border-disabled-default: var(--color-primitives-brand-400);
   --color-border-neutral-secondary: var(--color-primitives-slate-600);
   --color-primitives-brand-100: rgba(245, 245, 245, 1);
   --color-primitives-brand-300: rgba(217, 217, 217, 1);
   --color-primitives-brand-400: rgba(179, 179, 179, 1);
+  --color-primitives-brand-500: rgba(117, 117, 117, 1);
+  --color-primitives-brand-600: rgba(68, 68, 68, 1);
   --color-primitives-brand-700: rgba(56, 56, 56, 1);
   --color-primitives-brand-800: rgba(44, 44, 44, 1);
   --color-primitives-brand-900: rgba(30, 30, 30, 1);
+  --color-primitives-gray-100: rgba(245, 245, 245, 1);
+  --color-primitives-gray-200: rgba(230, 230, 230, 1);
   --color-primitives-gray-300: rgba(217, 217, 217, 1);
   --color-primitives-gray-600: rgba(68, 68, 68, 1);
+  --color-primitives-gray-700: rgba(56, 56, 56, 1);
+  --color-primitives-gray-800: rgba(44, 44, 44, 1);
   --color-primitives-gray-900: rgba(30, 30, 30, 1);
+  --color-primitives-red-100: rgba(254, 233, 231, 1);
+  --color-primitives-red-1000: rgba(48, 6, 3, 1);
+  --color-primitives-red-200: rgba(253, 211, 208, 1);
+  --color-primitives-red-400: rgba(244, 119, 106, 1);
+  --color-primitives-red-500: rgba(236, 34, 31, 1);
+  --color-primitives-red-600: rgba(192, 15, 12, 1);
+  --color-primitives-red-700: rgba(144, 11, 9, 1);
   --color-primitives-slate-1000: rgba(36, 36, 36, 1);
   --color-primitives-slate-200: rgba(227, 227, 227, 1);
   --color-primitives-slate-300: rgba(205, 205, 205, 1);
+  --color-primitives-slate-500: rgba(148, 148, 148, 1);
   --color-primitives-slate-600: rgba(118, 118, 118, 1);
   --color-primitives-slate-900: rgba(48, 48, 48, 1);
   --color-primitives-white-1000: rgba(255, 255, 255, 1);
   --color-text-brand-on-brand: var(--color-primitives-brand-100);
+  --color-text-danger-default: var(--color-primitives-red-700);
+  --color-text-danger-on-danger: var(--color-primitives-red-100);
   --color-text-default-default: var(--color-primitives-gray-900);
+  --color-text-disabled-default: var(--color-primitives-brand-400);
   --color-text-disabled-on-disabled: var(--color-primitives-brand-400);
   --color-text-neutral-default: var(--color-primitives-slate-900);
   --single-line-body-base-font-family: "Inter", Helvetica;
@@ -36,6 +61,8 @@
   --size-radius-200: 8px;
   --size-space-200: 8px;
   --size-space-300: 12px;
+  --typography-primitives-scale-06: 32px;
+  --typography-primitives-scale-07: 40px;
 }
 
 /*
@@ -53,25 +80,49 @@ You can apply the theme on any DOM node, not just the `body`
 [data-color-mode="SDS-light"] {
   --color-background-brand-default: var(--color-primitives-brand-800);
   --color-background-brand-hover: var(--color-primitives-brand-900);
+  --color-background-danger-default: var(--color-primitives-red-500);
+  --color-background-danger-hover: var(--color-primitives-red-600);
+  --color-background-danger-tertiary-hover: var(--color-primitives-red-200);
+  --color-background-default-default-hover: var(--color-primitives-gray-100);
+  --color-background-default-secondary: var(--color-primitives-gray-100);
+  --color-background-default-secondary-hover: var(--color-primitives-gray-200);
   --color-background-disabled-default: var(--color-primitives-brand-300);
   --color-background-neutral-tertiary: var(--color-primitives-slate-200);
   --color-background-neutral-tertiary-hover: var(--color-primitives-slate-300);
   --color-border-brand-default: var(--color-primitives-brand-800);
+  --color-border-danger-default: var(--color-primitives-red-700);
+  --color-border-danger-secondary: var(--color-primitives-red-600);
   --color-border-default-default: var(--color-primitives-gray-300);
+  --color-border-disabled-default: var(--color-primitives-brand-400);
+  --color-border-neutral-secondary: var(--color-primitives-slate-600);
   --color-text-brand-on-brand: var(--color-primitives-brand-100);
+  --color-text-danger-default: var(--color-primitives-red-700);
   --color-text-default-default: var(--color-primitives-gray-900);
+  --color-text-disabled-default: var(--color-primitives-brand-400);
   --color-text-neutral-default: var(--color-primitives-slate-900);
 }
 
 [data-color-mode="SDS-dark"] {
   --color-background-brand-default: var(--color-primitives-brand-100);
   --color-background-brand-hover: var(--color-primitives-brand-300);
+  --color-background-danger-default: var(--color-primitives-red-600);
+  --color-background-danger-hover: var(--color-primitives-red-700);
+  --color-background-danger-tertiary-hover: var(--color-primitives-red-1000);
+  --color-background-default-default-hover: var(--color-primitives-gray-700);
+  --color-background-default-secondary: var(--color-primitives-gray-800);
+  --color-background-default-secondary-hover: var(--color-primitives-gray-900);
   --color-background-disabled-default: var(--color-primitives-brand-700);
   --color-background-neutral-tertiary: var(--color-primitives-slate-900);
   --color-background-neutral-tertiary-hover: var(--color-primitives-slate-1000);
   --color-border-brand-default: var(--color-primitives-brand-100);
+  --color-border-danger-default: var(--color-primitives-red-200);
+  --color-border-danger-secondary: var(--color-primitives-red-400);
   --color-border-default-default: var(--color-primitives-gray-600);
+  --color-border-disabled-default: var(--color-primitives-brand-600);
+  --color-border-neutral-secondary: var(--color-primitives-slate-500);
   --color-text-brand-on-brand: var(--color-primitives-brand-900);
+  --color-text-danger-default: var(--color-primitives-red-200);
   --color-text-default-default: var(--color-primitives-white-1000);
+  --color-text-disabled-default: var(--color-primitives-brand-500);
   --color-text-neutral-default: var(--color-primitives-slate-200);
 }

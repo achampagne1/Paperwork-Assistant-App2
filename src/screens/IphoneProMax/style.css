@@ -1,0 +1,39 @@
+.iphone-pro-max {
+  background-color: rgba(255, 255, 255, 1.0);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.iphone-pro-max .button-wrapper {
+  background: linear-gradient(
+    180deg,
+    rgb(86.54, 153.85, 113.46) 0%,
+    rgb(93.56, 137.7, 71.49) 100%
+  );
+  background-color: rgba(255, 255, 255, 1.0);
+  height: 956px;
+  width: 440px;
+}
+
+.iphone-pro-max .button-instance {
+  background-color: #94598f !important;
+  border: unset !important;
+  border-color: unset !important;
+  display: flex !important;
+  height: 56px !important;
+  left: 123px !important;
+  top: 296px !important;
+  width: 193px !important;
+}
+
+.iphone-pro-max .design-component-instance-node {
+  font-family: "Inter", Helvetica !important;
+  font-size: 30px !important;
+  font-style: unset !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 30px !important;
+  margin-top: unset !important;
+}

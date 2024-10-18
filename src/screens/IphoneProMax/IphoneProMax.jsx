@@ -18,18 +18,17 @@ export const IphoneProMax = () => {
       <div className="div">
         <div className="frame">
           <div className="button-wrapper">
-            <div className="button">
+            <input
+                type="file"
+                id="fileInput"
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+            />
+            <div className="button"
+            onClick={() => document.getElementById("fileInput").click()}
+            >
                 <File className="size-32" color="#F5F5F5" />
-                <input
-                    type="file"
-                    id="fileInput"
-                    style={{ display: "none" }}
-                    onChange={handleFileChange}
-                />
-                <button
-                    className="text-wrapper"
-                    onClick={() => document.getElementById("fileInput").click()}
-                >
+                <button className="text-wrapper">
                     Select File
                 </button>
             </div>

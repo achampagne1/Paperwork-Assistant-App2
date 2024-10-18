@@ -1,6 +1,4 @@
 import React from "react";
-import { Button } from "../../components/Button";
-import { Star } from "../../components/Star";
 import "./style.css";
 
 export const Desktop = () => {
@@ -10,14 +8,12 @@ export const Desktop = () => {
         <div className="text-wrapper-2">Button</div>
       </button>
 
-      <Button
-        className="button-4"
-        label="Button"
-        size="medium"
-        variant="primary"
-      />
+      <button className="button-4">
+        <div className="text-wrapper-3">Button</div>
+      </button>
+
       <div className="icon-button">
-        <Star size="twenty" />
+        <img className="star" alt="Star" src="/img/star-37.svg" />
       </div>
     </div>
   );

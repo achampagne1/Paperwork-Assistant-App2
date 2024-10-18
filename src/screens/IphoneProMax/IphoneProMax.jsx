@@ -1,22 +1,42 @@
-import React from "react";
-import { Button } from "../../components/Button";
+import React, { useState } from "react";
+import { File } from "../../icons/File";
 import "./style.css";
 
 export const IphoneProMax = () => {
+    // State to store the selected file
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    // Function to handle file selection
+    const handleFileChange = (event) => {
+        const file = event.target.files[0]; // Get the selected file
+        setSelectedFile(file); // Store the file in state
+        console.log("Selected file:", file);
+    };
+
   return (
     <div className="iphone-pro-max">
       <div className="div">
         <div className="frame">
-          <Button
-            className="button-instance"
-            divClassName="design-component-instance-node"
-            label="Select File"
-            size="medium"
-            variant="primary"
-          />
+          <div className="button-wrapper">
+            <div className="button">
+                <File className="size-32" color="#F5F5F5" />
+                <input
+                    type="file"
+                    id="fileInput"
+                    style={{ display: "none" }}
+                    onChange={handleFileChange}
+                />
+                <button
+                    className="text-wrapper"
+                    onClick={() => document.getElementById("fileInput").click()}
+                >
+                    Select File
+                </button>
+            </div>
+          </div>
         </div>
 
-        <div className="button-wrapper">
+        <div className="div-wrapper">
           <button className="button-2">
             <div className="group">
               <div className="overlap-group">
@@ -32,6 +52,7 @@ export const IphoneProMax = () => {
           </button>
         </div>
       </div>
+      {selectedFile && <p>Selected File: {selectedFile.name}</p>}
     </div>
   );
 };

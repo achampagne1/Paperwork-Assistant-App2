@@ -7,11 +7,11 @@ export const Desktop = () => {
   return (
     <div className="desktop">
       <button className="button-danger">
-        <div className="div">Button</div>
+        <div className="text-wrapper-2">Button</div>
       </button>
 
       <Button
-        className="button-2"
+        className="button-4"
         label="Button"
         size="medium"
         variant="primary"

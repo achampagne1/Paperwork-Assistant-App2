@@ -26,7 +26,7 @@
   position: relative;
 }
 
-.desktop .div {
+.desktop .text-wrapper-2 {
   color: var(--color-text-danger-on-danger);
   font-family: var(--single-line-body-base-font-family);
   font-size: var(--single-line-body-base-font-size);
@@ -40,7 +40,7 @@
   width: fit-content;
 }
 
-.desktop .button-2 {
+.desktop .button-4 {
   flex: 0 0 auto !important;
   margin-bottom: -22.00px !important;
 }

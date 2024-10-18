@@ -5,14 +5,12 @@ import "./style.css";
 export const Desktop = () => {
   return (
     <div className="desktop">
-      <div className="button-wrapper">
-        <Button
-          className="button-instance"
-          label="Button"
-          size="medium"
-          variant="primary"
-        />
-      </div>
+      <Button
+        className="button-instance"
+        label="Button"
+        size="medium"
+        variant="primary"
+      />
     </div>
   );
 };

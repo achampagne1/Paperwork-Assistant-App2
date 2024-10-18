@@ -1,18 +1,14 @@
 .desktop {
+  align-items: flex-start;
   background-color: #76b174;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-
-.desktop .button-wrapper {
-  background-color: #76b174;
+  flex-direction: column;
+  gap: 10px;
   height: 1024px;
-  width: 1440px;
+  padding: 478px 682px;
+  position: relative;
 }
 
 .desktop .button-instance {
-  left: 683px !important;
-  top: 506px !important;
+  flex: 0 0 auto !important;
 }

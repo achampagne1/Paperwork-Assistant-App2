@@ -8,9 +8,9 @@ import React from "react";
 import "./style.css";
 
 export const Button = ({
-  label = "Button",
-  hasIconEnd = false,
   hasIconStart = false,
+  hasIconEnd = false,
+  label = "Button",
   variant,
   disabled = false,
   size,
@@ -28,9 +28,9 @@ export const Button = ({
 };
 
 Button.propTypes = {
-  label: PropTypes.string,
-  hasIconEnd: PropTypes.bool,
   hasIconStart: PropTypes.bool,
+  hasIconEnd: PropTypes.bool,
+  label: PropTypes.string,
   variant: PropTypes.oneOf(["primary", "neutral", "subtle"]),
   disabled: PropTypes.bool,
   size: PropTypes.oneOf(["medium", "small"]),

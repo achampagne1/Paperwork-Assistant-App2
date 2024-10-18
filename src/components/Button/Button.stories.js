@@ -17,9 +17,9 @@ export default {
 
 export const Default = {
   args: {
-    label: "Button",
-    hasIconEnd: false,
     hasIconStart: false,
+    hasIconEnd: false,
+    label: "Button",
     variant: "primary",
     disabled: false,
     size: "medium",

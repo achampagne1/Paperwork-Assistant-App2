@@ -35,7 +35,9 @@ export const IphoneProMax = () => {
           </div>
         </div>
 
-        <div className="div-wrapper">
+        <div className="frame-2">
+          <div className="text-wrapper-2">Created by Aubrey Champagne</div>
+
           <button className="button-2">
             <div className="group">
               <div className="overlap-group">

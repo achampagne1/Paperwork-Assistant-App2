@@ -182,3 +182,16 @@
   position: relative;
   width: fit-content;
 }
+
+.iphone-pro-max .beta-note {
+    color: #000000;
+  font-family: "Inter", Helvetica, Bold;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 14px;
+  margin-left: -55.50px;
+  margin-right: -55.50px;
+  position: relative;
+  width: fit-content;
+}

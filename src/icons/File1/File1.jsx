@@ -6,10 +6,10 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 import PropTypes from "prop-types";
 import React from "react";
 
-export const Size32 = ({ color = "#1E1E1E", className }) => {
+export const File1 = ({ color = "#F5F5F5", className }) => {
   return (
     <svg
-      className={`size-32 ${className}`}
+      className={`file-1 ${className}`}
       fill="none"
       height="32"
       viewBox="0 0 33 32"
@@ -18,7 +18,7 @@ export const Size32 = ({ color = "#1E1E1E", className }) => {
     >
       <path
         className="path"
-        d="M28.5 20V25.3333C28.5 26.0406 28.219 26.7189 27.719 27.219C27.2189 27.719 26.5406 28 25.8333 28H7.16667C6.45942 28 5.78115 27.719 5.28105 27.219C4.78095 26.7189 4.5 26.0406 4.5 25.3333V20M9.83333 13.3333L16.5 20M16.5 20L23.1667 13.3333M16.5 20V4"
+        d="M17.8333 2.66667H8.5C7.79276 2.66667 7.11448 2.94762 6.61438 3.44772C6.11429 3.94781 5.83334 4.62609 5.83334 5.33333V26.6667C5.83334 27.3739 6.11429 28.0522 6.61438 28.5523C7.11448 29.0524 7.79276 29.3333 8.5 29.3333H24.5C25.2072 29.3333 25.8855 29.0524 26.3856 28.5523C26.8857 28.0522 27.1667 27.3739 27.1667 26.6667V12M17.8333 2.66667L27.1667 12M17.8333 2.66667L17.8333 12H27.1667"
         stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -28,6 +28,6 @@ export const Size32 = ({ color = "#1E1E1E", className }) => {
   );
 };
 
-Size32.propTypes = {
+File1.propTypes = {
   color: PropTypes.string,
 };

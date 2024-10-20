@@ -26,7 +26,7 @@
   position: relative;
 }
 
-.desktop .text-wrapper-4 {
+.desktop .text-wrapper-5 {
   color: var(--color-text-danger-on-danger);
   font-family: var(--single-line-body-base-font-family);
   font-size: var(--single-line-body-base-font-size);
@@ -40,7 +40,7 @@
   width: fit-content;
 }
 
-.desktop .button-4 {
+.desktop .button-5 {
   all: unset;
   align-items: center;
   background-color: var(--color-background-brand-default);
@@ -58,7 +58,7 @@
   position: relative;
 }
 
-.desktop .text-wrapper-5 {
+.desktop .text-wrapper-6 {
   color: var(--color-text-brand-on-brand);
   font-family: var(--single-line-body-base-font-family);
   font-size: var(--single-line-body-base-font-size);

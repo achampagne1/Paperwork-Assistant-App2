@@ -17,7 +17,7 @@ export const Size241 = ({ className }) => {
     >
       <path
         className="path"
-        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+        d="M5 3L19 12L5 21V3Z"
         stroke="#1E1E1E"
         strokeLinecap="round"
         strokeLinejoin="round"

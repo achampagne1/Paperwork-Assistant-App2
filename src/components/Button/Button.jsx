@@ -5,34 +5,14 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import PropTypes from "prop-types";
 import React from "react";
+import { Size32 } from "../../icons/Size32";
 import "./style.css";
 
-export const Button = ({
-  hasIconStart = false,
-  hasIconEnd = false,
-  label = "Button",
-  variant,
-  disabled = false,
-  size,
-  className,
-  divClassName,
-}) => {
+export const Button = ({ className }) => {
   return (
-    <button className={`button disabled-${disabled} ${variant} ${className}`}>
-      <div
-        className={`text-wrapper disabled-0-${disabled} variant-${variant} ${size} ${divClassName}`}
-      >
-        {label}
-      </div>
-    </button>
+    <div className={`button ${className}`}>
+      <Size32 className="file" color="#F5F5F5" />
+      <button className="text-wrapper">Select File</button>
+    </div>
   );
-};
-
-Button.propTypes = {
-  hasIconStart: PropTypes.bool,
-  hasIconEnd: PropTypes.bool,
-  label: PropTypes.string,
-  variant: PropTypes.oneOf(["primary", "neutral", "subtle"]),
-  disabled: PropTypes.bool,
-  size: PropTypes.oneOf(["medium", "small"]),
 };

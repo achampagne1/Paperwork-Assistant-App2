@@ -1,1 +1,0 @@
-export { Normal } from "./Normal";

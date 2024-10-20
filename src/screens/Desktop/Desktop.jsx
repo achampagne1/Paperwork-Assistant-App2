@@ -5,11 +5,11 @@ export const Desktop = () => {
   return (
     <div className="desktop">
       <button className="button-danger">
-        <div className="text-wrapper-3">Button</div>
+        <div className="text-wrapper-4">Button</div>
       </button>
 
       <button className="button-4">
-        <div className="text-wrapper-4">Button</div>
+        <div className="text-wrapper-5">Button</div>
       </button>
 
       <div className="icon-button">

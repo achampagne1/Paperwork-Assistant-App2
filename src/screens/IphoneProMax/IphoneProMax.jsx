@@ -34,25 +34,19 @@ export const IphoneProMax = () => {
 
           <p className="instructions-click">
             Instructions: <br />
-            1) Click “Select File” to choose the file you want filled out.
+            Click “Select File” to choose the file you want filled out.
             <br />
-            2) Click “Record”&nbsp;&nbsp;and speak into the microphone as if you{" "}
+            Click “Record”&nbsp;&nbsp;and speak into the microphone as if you{" "}
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;were telling someone how to fill
             it out.
             <br />
-            3) Click “Stop Recording”. The AI model will automatically <br />
+            Click “Stop Recording”. The AI model will automatically <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;take your speech and
             automatically transcribe it to the
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.
-            <br /> 
-            4) Click “Get Output File” to download the filled out file.
-          </p>
-
-          <p className="beta-note">
-          Please Note this program is in beta and does make mistakes.
-          Verify information before submission.
+            <br /> Click “Get Output File” to download the filled out file.
           </p>
         </div>
       </div>

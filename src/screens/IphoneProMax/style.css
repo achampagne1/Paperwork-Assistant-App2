@@ -116,7 +116,8 @@
 .iphone-pro-max .button-3 {
   align-items: center;
   align-self: stretch;
-  background-color: #13c3334c;
+  background-color: #13c333;
+  opacity: .3;
   border-radius: var(--size-radius-200);
   display: flex;
   gap: var(--size-space-200);

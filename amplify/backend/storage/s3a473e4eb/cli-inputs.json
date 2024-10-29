@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3a473e4eb",
+  "policyUUID": "a473e4eb",
+  "bucketName": "paperworkassistantapd10c8a12ee344de389eeaea8689",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "S3Triggere9be0f48",
+  "groupAccess": {}
+}

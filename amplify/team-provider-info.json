@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-paperworkassistantap-dev-c7d33-authRole",
+      "UnauthRoleArn": "arn:aws:iam::905418196226:role/amplify-paperworkassistantap-dev-c7d33-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::905418196226:role/amplify-paperworkassistantap-dev-c7d33-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-paperworkassistantap-dev-c7d33-deployment",
+      "UnauthRoleName": "amplify-paperworkassistantap-dev-c7d33-unauthRole",
+      "StackName": "amplify-paperworkassistantap-dev-c7d33",
+      "StackId": "arn:aws:cloudformation:us-east-2:905418196226:stack/amplify-paperworkassistantap-dev-c7d33/d49dc050-9311-11ef-9c25-0ab7b8927843",
+      "AmplifyAppId": "dskwm0m4k93il"
+    },
+    "categories": {
+      "auth": {
+        "paperworkassistantap1879eae5": {}
+      },
+      "function": {
+        "S3Triggere9be0f48": {
+          "deploymentBucketName": "amplify-paperworkassistantap-dev-c7d33-deployment",
+          "s3Key": "amplify-builds/S3Triggere9be0f48-2b6b56744639557a7a6b-build.zip"
+        }
+      },
+      "storage": {
+        "s3a473e4eb": {}
+      }
+    }
+  }
+}

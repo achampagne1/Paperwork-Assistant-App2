@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../components/Button";
+import { Button3 } from "../../components/Button3";
 import { Play } from "../../icons/Play";
 import { Size32 } from "../../icons/Size32";
 import "./style.css";
@@ -20,15 +21,13 @@ export const IphoneProMax = () => {
           <div className="text-wrapper-3">AI Paperwork Assistant</div>
 
           <Button className="button-instance" />
+
           <div className="button-3">
             <Play className="icon-instance-node" color="white" />
             <div className="text-wrapper-4">Record</div>
           </div>
 
-          <div className="button-4">
-            <Size32 className="icon-instance-node" color="white" />
-            <div className="text-wrapper-4">Get Output File</div>
-          </div>
+          <Button3 className="button-instance" />
 
           <div className="rectangle" />
 

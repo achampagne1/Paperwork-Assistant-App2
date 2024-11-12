@@ -1,0 +1,33 @@
+﻿.button3 {
+    align-items: center;
+    background-color: #c31212;
+    border-radius: var(--size-radius-200);
+    display: flex;
+    gap: var(--size-space-200);
+    height: 56px;
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--size-space-300);
+    position: relative;
+    width: 300px;
+}
+
+    .button3 .file {
+        height: 32px !important;
+        position: relative !important;
+        width: 32px !important;
+    }
+
+    .button3 .text-wrapper {
+        all: unset;
+        box-sizing: border-box;
+        color: var(--color-text-brand-on-brand);
+        font-family: "Inter", Helvetica;
+        font-size: 30px;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 30px;
+        position: relative;
+        white-space: nowrap;
+        width: fit-content;
+    }

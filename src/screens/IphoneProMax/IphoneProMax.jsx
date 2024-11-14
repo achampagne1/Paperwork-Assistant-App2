@@ -2,7 +2,7 @@ import React from "react";
 import { Button3 } from "../../components/Button3";
 import { Button } from "../../components/Button";
 import { Play } from "../../icons/Play";
-import "./style.css";
+import "./IphoneProMaxStyle.css";
 
 export const IphoneProMax = () => {
   return (

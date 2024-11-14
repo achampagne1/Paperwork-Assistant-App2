@@ -1,4 +1,4 @@
-﻿.button3a {
+﻿.button3 {
     align-items: center;
     background-color: #2113c34c;
     border-radius: var(--size-radius-200);
@@ -12,13 +12,13 @@
     width: 300px;
 }
 
-.button3a .file {
+.button3 .file {
     height: 32px !important;
     position: relative !important;
     width: 32px !important;
 }
 
-.button3a .text-wrapper3 {
+.button3 .text-wrapper3 {
     all: unset;
     box-sizing: border-box;
     color: var(--color-text-brand-on-brand);

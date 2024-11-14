@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { PresignedUrlContext } from "../../PresignedUrlContext";
 import { File1 } from "../../icons/File1";
-import "./style.css";
+import "./ButtonStyle.css";
 import { uploadData } from 'aws-amplify/storage';
 
 export const Button = ({ className }) => {
+
+    const { setPresignedUrl } = useContext(PresignedUrlContext);
     const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileChange = async (event) => {
@@ -58,14 +61,14 @@ export const Button = ({ className }) => {
             .then((data) => {
                 // Assuming the Lambda function returns the pre-signed URL in the response
                 console.log("Pre-signed URL:",data);
-                presignedLink = data.url
+                setPresignedUrl(data.url);
                 // Automatically download the file
-                const link = document.createElement("a");
-                link.href = presignedLink;
-                link.download = "output-file.pdf"; // You can specify the filename
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                //const link = document.createElement("a");
+                //link.href = presignedLink;
+                //link.download = "output-file.pdf"; // You can specify the filename
+                //document.body.appendChild(link);
+                //link.click();
+                //document.body.removeChild(link);
             })
             .catch((error) => {
                 console.error("Error fetching pre-signed URL:", error);

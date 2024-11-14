@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { File1 } from "../../icons/File1";
 import "./style.css";
-import "../../screens/IphoneProMax/style.css"
 import { uploadData } from 'aws-amplify/storage';
 
 export const Button = ({ className }) => {

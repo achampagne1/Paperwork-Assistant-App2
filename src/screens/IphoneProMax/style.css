@@ -113,6 +113,11 @@
   width: 100% !important;
 }
 
+.iphone-pro-max .button3-instance {
+    align-self: stretch !important;
+    width: 100% !important;
+}
+
 .iphone-pro-max .button-3 {
   align-items: center;
   align-self: stretch;

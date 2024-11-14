@@ -1,8 +1,7 @@
 import React from "react";
-import { Button } from "../../components/Button";
 import { Button3 } from "../../components/Button3";
+import { Button } from "../../components/Button";
 import { Play } from "../../icons/Play";
-import { Size32 } from "../../icons/Size32";
 import "./style.css";
 
 export const IphoneProMax = () => {
@@ -27,7 +26,7 @@ export const IphoneProMax = () => {
             <div className="text-wrapper-4">Record</div>
           </div>
 
-          <Button3 className="button-instance" />
+          <Button3 className="button3-instance" />
 
           <div className="rectangle" />
 

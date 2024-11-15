@@ -1,7 +1,7 @@
 import React from "react";
 import { Button3 } from "../../components/Button3";
+import { Button2 } from "../../components/Button2";
 import { Button } from "../../components/Button";
-import { Play } from "../../icons/Play";
 import "./IphoneProMaxStyle.css";
 
 export const IphoneProMax = () => {
@@ -21,10 +21,7 @@ export const IphoneProMax = () => {
 
           <Button className="button-instance" />
 
-          <div className="button-3">
-            <Play className="icon-instance-node" color="white" />
-            <div className="text-wrapper-4">Record</div>
-          </div>
+          <Button2 className="button2-instance" />
 
           <Button3 className="button3-instance" />
 
@@ -39,7 +36,7 @@ export const IphoneProMax = () => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;were telling someone how to fill
             it out.
             <br />
-            Click “Stop Recording”. The AI model will automatically <br />
+            Click “Stop”. The AI model will automatically <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;take your speech and
             automatically transcribe it to the
             <br />

@@ -3,6 +3,7 @@ import { PresignedUrlContext } from "../../PresignedUrlContext";
 import { File1 } from "../../icons/File1";
 import "./ButtonStyle.css";
 import { uploadData } from 'aws-amplify/storage';
+import { uploadFile } from '../../helpers/UploadFile'
 
 export const Button = ({ className }) => {
 
@@ -16,19 +17,7 @@ export const Button = ({ className }) => {
         console.log("Selected file:", file);
 
         if (file) {
-            try {
-                filePath = "input/" + file.name;
-                const result = await uploadData({
-                    path: filePath,
-                    data: file,
-                    options: {
-                        level: 'public'
-                    }
-                }).result;
-                console.log('Upload succeeded:', result);
-            } catch (error) {
-                console.log('Upload error:', error);
-            }
+            uploadFile(file);
         }
 
         // Change the opacity of the button

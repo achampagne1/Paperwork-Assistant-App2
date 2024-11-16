@@ -1,10 +1,10 @@
 ﻿import React, { useState, useContext } from "react";
-import { PresignedUrlContext } from "../../PresignedUrlContext";
+import { Context } from "../../ContextProvider";
 import { Size32 } from "../../icons/Size32";
 import "./Button3Style.css";
 
 export const Button3 = ({ className }) => {
-    const { presignedUrl } = useContext(PresignedUrlContext);
+    const { presignedUrl } = useContext(Context);
 
     const handleDownload = () => {
         const link = document.createElement("a");

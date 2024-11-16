@@ -1,6 +1,6 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { PresignedUrlProvider } from './PresignedUrlContext';
+import { ContextProvider } from './ContextProvider';
 import { Desktop } from "./screens/Desktop";
 import { IphoneProMax } from "./screens/IphoneProMax";
 
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
 
 export const App = () => {
     return (
-        <PresignedUrlProvider>
+        <ContextProvider>
             <RouterProvider router={router} />
-        </PresignedUrlProvider>
+        </ContextProvider>
     );
 };

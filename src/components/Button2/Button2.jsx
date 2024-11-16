@@ -1,13 +1,15 @@
 ﻿import React, { useState, useContext } from "react";
+import { Context } from "../../ContextProvider";
 import { Play } from "../../icons/Play";
 import "./Button2Style.css";
 import { uploadData } from 'aws-amplify/storage';
 import { uploadFile } from '../../helpers/UploadFile'
 
 export const Button2 = ({ className }) => {
+
+    const { setPresignedUrl } = useContext(Context);
     const [isRecording, setIsRecording] = useState(false);
     const [mediaRecorder, setMediaRecorder] = useState(null);
-    const [selectedFile, setSelectedFile] = useState(null);
 
     const handleToggleRecording = async () => {
         if (!isRecording) {
@@ -25,9 +27,6 @@ export const Button2 = ({ className }) => {
                 recorder.onstop = () => {
                     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
                     uploadFile(audioBlob);
-                    //audio.play(); // Play back the recording (optional)
-
-                    // Save or process audioBlob here, e.g., upload to server
                 };
 
                 recorder.start();
@@ -36,11 +35,39 @@ export const Button2 = ({ className }) => {
                 console.error("Microphone access denied", err);
             }
         } else {
-            // Stop recording
             mediaRecorder.stop();
             setIsRecording(false);
+            fetchURL(filePath);
         }
     };
+
+    function fetchURL(filePath) {
+        const s3Event = {
+            bucket: "paperworkassistantapd10c8a12ee344de389eeaea8689c7d33-dev",
+            object: filePath
+        };
+        apiEndpoint = "https://1yj20j1n7c.execute-api.us-east-2.amazonaws.com/callLambda";
+        fetch(apiEndpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(s3Event),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Pre-signed URL:", data);
+                setPresignedUrl(data.url);
+            })
+            .catch((error) => {
+                console.error("Error fetching pre-signed URL:", error);
+            });
+    }
 
     return (
         <div className={`button2 ${className}`}>

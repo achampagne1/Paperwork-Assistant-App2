@@ -8,6 +8,7 @@ import { uploadFile } from '../../helpers/UploadFile'
 export const Button2 = ({ className }) => {
 
     const { setPresignedUrl } = useContext(Context);
+    const { filePath } = useContext(Context);
     const [isRecording, setIsRecording] = useState(false);
     const [mediaRecorder, setMediaRecorder] = useState(null);
 
@@ -26,7 +27,11 @@ export const Button2 = ({ className }) => {
 
                 recorder.onstop = () => {
                     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    uploadFile(audioBlob);
+                    audioFileName = filePath.slice(6, -4) + "_recording.wav";
+                    const audioFile = new File([audioBlob], audioFileName, { type: 'audio/wav' });
+                    uploadFile(audioFile);
+                    audioFileName = "input/"+audioFileName;
+                    fetchURL(audioFileName);
                 };
 
                 recorder.start();
@@ -37,15 +42,17 @@ export const Button2 = ({ className }) => {
         } else {
             mediaRecorder.stop();
             setIsRecording(false);
-            fetchURL(filePath);
         }
     };
 
-    function fetchURL(filePath) {
+    function fetchURL(audioFileName) {
+        //api payload
         const s3Event = {
             bucket: "paperworkassistantapd10c8a12ee344de389eeaea8689c7d33-dev",
-            object: filePath
+            file: filePath,
+            audio: audioFileName
         };
+
         apiEndpoint = "https://1yj20j1n7c.execute-api.us-east-2.amazonaws.com/callLambda";
         fetch(apiEndpoint, {
             method: "POST",

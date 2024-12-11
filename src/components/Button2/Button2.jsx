@@ -48,7 +48,7 @@ export const Button2 = ({ className }) => {
     function fetchURL(audioFileName) {
         //api payload
         const s3Event = {
-            bucket: "paperworkassistantapd10c8a12ee344de389eeaea8689c7d33-dev",
+            bucket: "paperworkassistantapd10c8a12ee344de389eeaea8689c7d33-main",
             file: filePath,
             audio: audioFileName
         };

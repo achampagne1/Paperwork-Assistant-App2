@@ -4,7 +4,6 @@ import { App } from "./App";
 import { Amplify }  from 'aws-amplify';
 import amplifyconfig from './amplifyconfiguration.json';
 import awsconfig from './aws-exports';
-import { signIn } from 'aws-amplify/auth'
 
 Amplify.configure(amplifyconfig);
 Amplify.configure(awsconfig);

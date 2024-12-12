@@ -145,13 +145,6 @@
   width: fit-content;
 }
 
-.iphone-pro-max .rectangle {
-  background-color: #ffffff4c;
-  border-radius: 8px;
-  height: 29px;
-  width: 300px;
-}
-
 .iphone-pro-max .instructions-click {
   color: #000000;
   font-family: "Inter", Helvetica;

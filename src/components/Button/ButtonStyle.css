@@ -96,3 +96,26 @@
     white-space: nowrap;
     width: fit-content;
 }
+
+.textBox {
+    background-color: #ffffff4c;
+    border-radius: 8px;
+    height: 29px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textBox .text {
+    all: unset;
+    box-sizing: border-box;
+    color: #1d0000;
+    font-family: "Inter", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+    text-align: center; 
+}

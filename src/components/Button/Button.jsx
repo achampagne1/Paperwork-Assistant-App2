@@ -9,22 +9,21 @@ export const Button = ({ className }) => {
 
     const [selectedFile, setSelectedFile] = useState(null);
     const { setFilePath } = useContext(Context);
+    const { setFileState } = useContext(Context);
 
     const handleFileChange = async (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);  
-        console.log("Selected file:", file);
 
-        if (file) {
+        if (file && file["name"].slice(-4) == ".pdf") {
+            console.log(file["name"]);
             uploadFile(file);
             const filePath = `input/${file.name}`;
             setFilePath(filePath);
+            setFileState(1)
         }
-
-        // Change the opacity of the button
-        const button = document.querySelector('.button-3');
-        if (button) {
-            button.style.opacity = '1.0';
+        else {
+            setFileState(2)
         }
     };
 

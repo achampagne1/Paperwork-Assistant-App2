@@ -8,6 +8,7 @@ import { uploadFile } from '../../helpers/UploadFile'
 export const Button2 = ({ className }) => {
 
     const { setPresignedUrl } = useContext(Context);
+    const { setFileReady } = useContext(Context);
     const { filePath } = useContext(Context);
     const [isRecording, setIsRecording] = useState(false);
     const [mediaRecorder, setMediaRecorder] = useState(null);
@@ -70,6 +71,7 @@ export const Button2 = ({ className }) => {
             .then((data) => {
                 console.log("Pre-signed URL:", data);
                 setPresignedUrl(data.url);
+                setFileReady(true);
             })
             .catch((error) => {
                 console.error("Error fetching pre-signed URL:", error);

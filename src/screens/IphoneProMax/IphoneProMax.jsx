@@ -10,7 +10,7 @@ import { GlobalWorkerOptions } from "pdfjs-dist";
 export const IphoneProMax = () => {
     useEffect(() => {
         // Set the workerSrc for PDF.js
-        GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
+        GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.worker.min.mjs';
 
         const url = "testForm1.pdf"; // Adjust the path as needed
 
@@ -61,7 +61,7 @@ export const IphoneProMax = () => {
                     <div
                         style={{
                             height: "200px", // Set height to restrict visible area
-                            width: "82.3%", // Adjust width as needed
+                            width: "41%", // Adjust width as needed
                             overflow: "auto", // Enable scrolling
                             //border: "1px solid #ccc", // Optional styling
                         }}

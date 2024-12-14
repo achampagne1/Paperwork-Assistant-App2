@@ -12,9 +12,12 @@
   "dependencies": {
     "@aws-amplify/ui-react": "^6.5.5",
     "aws-amplify": "^6.6.7",
+    "pdfjs-dist": "^4.9.155",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-pdf": "^9.1.1",
+    "react-pdf-viewer": "^0.1.0",
     "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
@@ -34,5 +37,6 @@
     "parcel-reporter-static-files-copy": "^1.5.0",
     "process": "^0.11.10",
     "storybook": "^8.3.4"
-  }
+  },
+  "static": "static"
 }

@@ -157,3 +157,8 @@
   position: relative;
   width: fit-content;
 }
+
+#pdfContainer {
+    height: 500px;
+    overflow: auto;
+}

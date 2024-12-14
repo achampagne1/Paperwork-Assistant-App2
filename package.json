@@ -7,7 +7,8 @@
     "build": "cross-env NODE_ENV=production parcel build --public-url ./ --no-scope-hoist --no-source-maps",
     "dev": "parcel",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.5.5",
@@ -36,7 +37,9 @@
     "parcel": "^2.12.0",
     "parcel-reporter-static-files-copy": "^1.5.0",
     "process": "^0.11.10",
-    "storybook": "^8.3.4"
+    "storybook": "^8.3.4",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4"
   },
   "static": "static"
 }

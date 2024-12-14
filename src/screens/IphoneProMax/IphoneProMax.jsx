@@ -20,7 +20,7 @@ export const IphoneProMax = () => {
             .then((pdf) => {
                 // Fetch the first page of the PDF
                 pdf.getPage(1).then((page) => {
-                    const scale = 1; // Adjust the scale (zoom level) as desired
+                    const scale = .7; // Adjust the scale (zoom level) as desired
                     const viewport = page.getViewport({ scale });
 
                     // Prepare the canvas element
@@ -58,24 +58,17 @@ export const IphoneProMax = () => {
                 <div className="frame-2">
                     <div className="text-wrapper-3">AI Paperwork Assistant</div>
 
-                    <div
-                        style={{
-                            height: "200px", // Set height to restrict visible area
-                            width: "41%", // Adjust width as needed
-                            overflow: "auto", // Enable scrolling
-                            //border: "1px solid #ccc", // Optional styling
-                        }}
-                    >
+                    <div className="pdf-container">
                         <canvas id="pdfCanvas"></canvas>
                     </div>
 
-                    <Button className="button-instance" />
+                    <Button/>
 
-                    <Button2 className="button2-instance" />
+                    <Button2/>
 
-                    <Button3 className="button3-instance" />
+                    <Button3/>
 
-                    <TextBox className="textBox-instance" />
+                    <TextBox/>
 
                     <p className="instructions-click">
                         Instructions: <br />

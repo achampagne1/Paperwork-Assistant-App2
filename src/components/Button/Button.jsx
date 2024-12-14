@@ -33,7 +33,7 @@ export const Button = ({ className }) => {
     }
 
     return (
-        <div className={`button ${className}`}>
+        <div className="buttonWrapper">
             <input type="file" id="fileInput" style={{ display: "none" }} onChange={handleFileChange} />
             <div className="button" onClick={() => handleClick()}>
                 <File1 className="file" color="#F5F5F5" />

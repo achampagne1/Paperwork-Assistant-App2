@@ -17,12 +17,10 @@ export const Button3 = ({ className }) => {
     };
 
     return (
-        <div className={`button3 ${className}`}>
-            <div className="button3" onClick={handleDownload}>
-                <Size32 className="icon-instance-node" color="white" />
-                <div className="text-wrapper3">
-                    {fileReady ? "Get File" : "File Not Ready"}
-                </div>
+        <div className="button3" onClick={handleDownload}>
+            <Size32 className="icon-instance-node" color="white" />
+            <div className="text-wrapper3">
+                {fileReady ? "Get File" : "File Not Ready"}
             </div>
         </div>
     );

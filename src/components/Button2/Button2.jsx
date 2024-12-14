@@ -79,12 +79,10 @@ export const Button2 = ({ className }) => {
     }
 
     return (
-        <div className={`button2 ${className}`}>
-            <div className="button2" onClick={handleToggleRecording}>
-                <Play className="icon-instance-node" color="white" />
-                <div className="text-wrapper3">
-                    {isRecording ? "Stop" : "Record"}
-                </div>
+        <div className="button2" onClick={handleToggleRecording}>
+            <Play className="icon-instance-node" color="white" />
+            <div className="text-wrapper3">
+                {isRecording ? "Stop" : "Record"}
             </div>
         </div>
     );

@@ -19,7 +19,7 @@ export const TextBox = ({ className }) => {
     }
 
     return (
-        <div className={`textBox`}>
+        <div className="textBox">
             <div className="text">
                 {displayText}
             </div>

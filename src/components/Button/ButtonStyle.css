@@ -1,4 +1,4 @@
-.button {
+.buttonWrapper {
   align-items: center;
   background-color: #c31212;
   border-radius: var(--size-radius-200);
@@ -11,13 +11,13 @@
   width: 300px;
 }
 
-.button .file {
+.buttonWrapper .file {
   height: 32px !important;
   position: relative !important;
   width: 32px !important;
 }
 
-.button .text-wrapper {
+.buttonWrapper .text-wrapper {
   all: unset;
   box-sizing: border-box;
   color: var(--color-text-brand-on-brand);

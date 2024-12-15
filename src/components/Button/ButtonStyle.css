@@ -1,14 +1,15 @@
 .buttonWrapper {
-  align-items: center;
-  background-color: #c31212;
-  border-radius: var(--size-radius-200);
-  display: flex;
-  gap: var(--size-space-200);
-  height: 56px;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  width: 300px;
+    align-items: center;
+    background-color: #c31212;
+    border-radius: var(--size-radius-200);
+    display: flex;
+    gap: var(--size-space-200);
+    height: 56px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    max-width: 645px;
+    width: 100vw;
 }
 
 .buttonWrapper .file {

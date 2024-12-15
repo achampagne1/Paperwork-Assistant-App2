@@ -16,8 +16,7 @@ export const Button = ({ className }) => {
         setSelectedFile(file);  
 
         if (file && file["name"].slice(-4) == ".pdf") {
-            console.log(file["name"]);
-            uploadFile(file);
+            //uploadFile(file); //uncomment when testing is done
             const filePath = `input/${file.name}`;
             setFilePath(filePath);
             setFileState(1)

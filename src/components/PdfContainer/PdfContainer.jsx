@@ -3,6 +3,7 @@ import './PdfContainerStyle.css';
 import * as pdfjsLib from "pdfjs-dist";
 import { GlobalWorkerOptions } from "pdfjs-dist";
 import { Context } from "../../ContextProvider";
+import { TextBox } from "../../components/TextBox";
 
 export const PdfContainer = ({ className }) => {
     const { fileState } = useContext(Context);
@@ -74,9 +75,7 @@ export const PdfContainer = ({ className }) => {
             {fileState === 1 ? (
                 <canvas id="pdfCanvas"></canvas>
             ) : (
-                <div className="blankBox">
-                    {/* Add styles for the blank box in PdfContainerStyle.css */}
-                </div>
+                    <TextBox />
             )}
         </div>
     );

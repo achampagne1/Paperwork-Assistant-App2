@@ -1,6 +1,7 @@
 ﻿.textBox {
     background-color: #ffffff4c;
     border-radius: 8px;
-    height: 29px;
-    width: 300px;
+    height: 200px;
+    max-width: 645px;
+    width: 100vw;
 }

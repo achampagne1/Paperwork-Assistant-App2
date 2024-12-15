@@ -29,8 +29,6 @@ export const IphoneProMax = () => {
 
                     <Button3/>
 
-                    <TextBox/>
-
                     <p className="instructions-click">
                         Instructions: <br />
                         Click “Select File” to choose the file you want filled out.

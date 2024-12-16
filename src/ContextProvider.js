@@ -7,6 +7,7 @@ export const ContextProvider = ({ children }) => {
     const [filePath, setFilePathInternal] = useState(null);
     const [fileReady, setFileReadyInternal] = useState(false);
     const [fileState, setFileStateInternal] = useState(0);
+    const [selectedFile, setSelectedFile] = useState(null);
 
     // Debugging setters
     const setPresignedUrl = (value) => {
@@ -40,6 +41,8 @@ export const ContextProvider = ({ children }) => {
                 setFileReady,
                 fileState,
                 setFileState,
+                selectedFile,
+                setSelectedFile,
             }}
         >
             {children}

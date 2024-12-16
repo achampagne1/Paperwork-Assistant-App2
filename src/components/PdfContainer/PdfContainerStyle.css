@@ -1,13 +1,15 @@
-#pdfContainer {
-    height: 500px;
-    overflow: auto;
-}
-
 .pdfContainer2 {
-    height: 200px;
     max-width: 645px;
     width: 100vw;
     overflow: auto;
-    /* border: 1px solid #ccc; */
     margin: 0 auto;
+    transition: height 0.3s ease; /* Smooth transition */
 }
+
+    .pdfContainer2.expanded {
+        height: 200px;
+    }
+
+    .pdfContainer2.collapsed {
+        height: 30px;
+    }

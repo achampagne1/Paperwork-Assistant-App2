@@ -6,76 +6,73 @@ import { Context } from "../../ContextProvider";
 import { TextBox } from "../../components/TextBox";
 
 export const PdfContainer = ({ className }) => {
-    const { fileState } = useContext(Context);
-    const { filePath } = useContext(Context);
+    const { fileState, selectedFile } = useContext(Context); // Get selectedFile from context
 
     useEffect(() => {
-        console.log("here")
         if (fileState !== 1) {
-            return; 
+            return;
         }
-        // Set the workerSrc for PDF.js
+
         GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.worker.min.mjs';
 
         const renderPDF = () => {
-            const url = "testForm1.pdf"; // Adjust the path as needed
-            const containerWidth = Math.min(window.innerWidth, 629); // Ensure it fits within the container
+            const containerWidth = Math.min(window.innerWidth, 629);
 
-            // Load the PDF document
-            const loadingTask = pdfjsLib.getDocument(url);
-            loadingTask.promise
-                .then((pdf) => {
-                    // Fetch the first page of the PDF
-                    pdf.getPage(1).then((page) => {
-                        // Calculate scale based on container width
-                        const viewport = page.getViewport({ scale: 1 }); // Get default dimensions
-                        const scale = containerWidth / viewport.width; // Fit to container width
+            const fileReader = new FileReader();
+            fileReader.onload = (event) => {
+                const typedArray = new Uint8Array(event.target.result);
 
-                        // Create scaled viewport
-                        const scaledViewport = page.getViewport({ scale });
+                // Load the PDF document from the file's content
+                const loadingTask = pdfjsLib.getDocument({ data: typedArray });
+                loadingTask.promise
+                    .then((pdf) => {
+                        pdf.getPage(1).then((page) => {
+                            const viewport = page.getViewport({ scale: 1 });
+                            const scale = containerWidth / viewport.width;
+                            const scaledViewport = page.getViewport({ scale });
 
-                        // Prepare the canvas element
-                        const canvas = document.getElementById("pdfCanvas");
-                        const context = canvas.getContext("2d");
+                            const canvas = document.getElementById("pdfCanvas");
+                            const context = canvas.getContext("2d");
 
-                        // Set the canvas size to the scaled viewport dimensions
-                        canvas.height = scaledViewport.height;
-                        canvas.width = scaledViewport.width;
+                            canvas.height = scaledViewport.height;
+                            canvas.width = scaledViewport.width;
 
-                        // Render the PDF page into the canvas
-                        const renderContext = {
-                            canvasContext: context,
-                            viewport: scaledViewport,
-                        };
-                        page.render(renderContext);
+                            const renderContext = {
+                                canvasContext: context,
+                                viewport: scaledViewport,
+                            };
+                            page.render(renderContext);
+                        });
+                    })
+                    .catch((error) => {
+                        console.error("Error loading PDF:", error);
                     });
-                })
-                .catch((error) => {
-                    console.error("Error loading PDF:", error);
-                });
+            };
+
+            fileReader.readAsArrayBuffer(selectedFile); // Read file content as ArrayBuffer
         };
 
-        // Initial render
         renderPDF();
 
-        // Re-render on window resize
         const handleResize = () => {
             renderPDF();
         };
         window.addEventListener("resize", handleResize);
 
-        // Cleanup event listener
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, [fileState]);
+    }, [selectedFile, fileState]);
+
 
     return (
-        <div className="pdfContainer2">
+        <div
+            className={`pdfContainer2 ${fileState === 1 ? "expanded" : "collapsed"}`}
+        >
             {fileState === 1 ? (
                 <canvas id="pdfCanvas"></canvas>
             ) : (
-                    <TextBox />
+                <TextBox />
             )}
         </div>
     );

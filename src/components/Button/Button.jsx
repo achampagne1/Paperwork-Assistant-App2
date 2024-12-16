@@ -7,16 +7,14 @@ import { uploadFile } from '../../helpers/UploadFile'
 
 export const Button = ({ className }) => {
 
-    const [selectedFile, setSelectedFile] = useState(null);
-    const { setFilePath } = useContext(Context);
-    const { setFileState } = useContext(Context);
+    const { setFilePath, setFileState, setSelectedFile } = useContext(Context);
 
     const handleFileChange = async (event) => {
         const file = event.target.files[0];
-        setSelectedFile(file);  
 
         if (file && file["name"].slice(-4) == ".pdf") {
-            //uploadFile(file); //uncomment when testing is done
+            setSelectedFile(file);  
+            uploadFile(file); //uncomment when testing is done
             const filePath = `input/${file.name}`;
             setFilePath(filePath);
             setFileState(1)

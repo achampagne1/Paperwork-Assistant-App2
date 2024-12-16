@@ -7,9 +7,9 @@ import { uploadFile } from '../../helpers/UploadFile'
 
 export const Button2 = ({ className }) => {
 
-    const { setPresignedUrl } = useContext(Context);
+    const { setPresignedUrl, selectedFile } = useContext(Context);
     const { setFileReady } = useContext(Context);
-    const { filePath } = useContext(Context);
+    //const { filePath } = useContext(Context);
     const [isRecording, setIsRecording] = useState(false);
     const [mediaRecorder, setMediaRecorder] = useState(null);
 
@@ -28,9 +28,11 @@ export const Button2 = ({ className }) => {
 
                 recorder.onstop = () => {
                     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    audioFileName = filePath.slice(6, -4) + "_recording.wav";
+                    const filePath = `input/${selectedFile.name}`;
+                    audioFileName = filePath.slice(6, -4) + "_recording.wav"; //why do I remove the input/, then create the file, then add it back?
+                    console.log(audioFileName)
                     const audioFile = new File([audioBlob], audioFileName, { type: 'audio/wav' });
-                    uploadFile(audioFile);
+                    uploadFile(audioFile); //uncommenting when done testing
                     audioFileName = "input/"+audioFileName;
                     fetchURL(audioFileName);
                 };
@@ -50,7 +52,7 @@ export const Button2 = ({ className }) => {
         //api payload
         const s3Event = {
             bucket: "paperworkassistantapd10c8a12ee344de389eeaea868936651-main",
-            file: filePath,
+            file: `input/${selectedFile.name}`,
             audio: audioFileName
         };
 

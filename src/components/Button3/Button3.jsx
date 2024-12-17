@@ -4,13 +4,12 @@ import { Size32 } from "../../icons/Size32";
 import "./Button3Style.css";
 
 export const Button3 = ({ className }) => {
-    const { presignedUrl } = useContext(Context);
-    const { fileReady } = useContext(Context);
+    const { presignedUrl, fileReady } = useContext(Context);
 
     const handleDownload = () => {
         const link = document.createElement("a");
         link.href = presignedUrl;
-        link.download = "output-file.pdf"; // You can specify the filename
+        link.download = "output-file.pdf"; // I actually dont know how it gets the correct output name
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

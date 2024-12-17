@@ -1,6 +1,5 @@
 .pdfContainer2 {
     max-width: 645px;
-    width: 100vw;
     overflow: auto;
     margin: 0 auto;
     transition: height 0.3s ease; /* Smooth transition */
@@ -8,8 +7,10 @@
 
     .pdfContainer2.expanded {
         height: 200px;
+        width: 100vw
     }
 
     .pdfContainer2.collapsed {
         height: 30px;
+        width: 70vw;
     }

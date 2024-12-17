@@ -22,66 +22,18 @@
 
 .iphone-pro-max .frame {
   align-items: flex-start;
-  background-color: #e8e8e8;
+  background-color: #161D15;
   display: flex;
   flex-direction: column;
   gap: 9px;
-  height: 60px;
+  height: 30px;
   justify-content: center;
+  padding: 5px;
+  position: fixed;
+  top: 0; 
   left: 0;
-  padding: 5px 7px;
-  position: absolute;
-  top: 896px;
-  width: 700px;
-}
-
-.iphone-pro-max .text-wrapper-2 {
-  align-self: stretch;
-  color: #818181;
-  font-family: var(--single-line-body-base-font-family);
-  font-size: var(--single-line-body-base-font-size);
-  font-style: var(--single-line-body-base-font-style);
-  font-weight: var(--single-line-body-base-font-weight);
-  letter-spacing: var(--single-line-body-base-letter-spacing);
-  line-height: var(--single-line-body-base-line-height);
-  margin-top: -3.00px;
-  position: relative;
-}
-
-.iphone-pro-max .button-wrapper {
-  all: unset;
-  align-items: center;
-  background-color: var(--color-background-brand-default);
-  border: 1px solid;
-  border-color: var(--color-border-brand-default);
-  border-radius: var(--size-radius-200);
-  box-sizing: border-box;
-  display: flex;
-  gap: var(--size-space-200);
-  height: 29px;
-  justify-content: center;
-  margin-bottom: -2.00px;
-  overflow: hidden;
-  padding: var(--size-space-300);
-  position: relative;
-  width: 131px;
-}
-
-.iphone-pro-max .button-2 {
-  all: unset;
-  box-sizing: border-box;
-  color: var(--color-text-brand-on-brand);
-  font-family: var(--single-line-body-base-font-family);
-  font-size: var(--single-line-body-base-font-size);
-  font-style: var(--single-line-body-base-font-style);
-  font-weight: var(--single-line-body-base-font-weight);
-  letter-spacing: var(--single-line-body-base-letter-spacing);
-  line-height: var(--single-line-body-base-line-height);
-  margin-bottom: -4.50px;
-  margin-top: -6.50px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
+  width: 100vw; 
+  z-index: 1000; 
 }
 
 .iphone-pro-max .frame-2 {
@@ -90,7 +42,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-  height: 896px;
+  height: 500px;
   left: 0;
   position: fixed;
   top: 0;
@@ -98,17 +50,14 @@
   width: 100vw;
 }
 
-.iphone-pro-max .text-wrapper-3 {
-  color: #434343;
+.iphone-pro-max .title {
+  align-self: stretch;
+  color: #FFFFFF;
   font-family: "Inter", Helvetica;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 24px;
-  margin-top: -1.00px;
+  margin-top: 1px;
   position: relative;
-  white-space: nowrap;
-  width: fit-content;
 }
 
 .iphone-pro-max .button-3 {

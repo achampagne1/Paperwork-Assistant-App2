@@ -9,7 +9,7 @@
     overflow: hidden;
     position: relative;
     max-width: 645px;
-    width: 100vw;
+    width: 70vw;
 }
 
 .buttonWrapper .file {
@@ -34,7 +34,7 @@
 
 .button3 {
     align-items: center;
-    background-color: #2113c34c;
+    background-color: #2113c3;
     border-radius: var(--size-radius-200);
     display: flex;
     gap: var(--size-space-200);
@@ -103,7 +103,7 @@
     border-radius: 8px;
     height: 30px;
     max-width: 645px;
-    width: 100vw;
+    width: 70vw;
     display: flex;
     justify-content: center;
     align-items: center;

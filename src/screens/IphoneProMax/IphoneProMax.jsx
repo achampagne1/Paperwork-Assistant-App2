@@ -11,15 +11,10 @@ export const IphoneProMax = () => {
         <div className="iphone-pro-max">
             <div className="div">
                 <div className="frame">
-                    <div className="text-wrapper-2">Created by Aubrey Champagne</div>
-
-                    <button className="button-wrapper">
-                        <button className="button-2">Contact</button>
-                    </button>
+                    <div className="title">Doc Smart AI</div>
                 </div>
 
                 <div className="frame-2">
-                    <div className="text-wrapper-3">AI Paperwork Assistant</div>
 
                     <Button />
 

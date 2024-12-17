@@ -7,16 +7,18 @@ import { uploadFile } from '../../helpers/UploadFile'
 
 export const Button = ({ className }) => {
 
-    const { setFilePath, setFileState, setSelectedFile } = useContext(Context);
+    const {setFileState, setSelectedFile, setFileName } = useContext(Context);
 
     const handleFileChange = async (event) => {
         const file = event.target.files[0];
 
-        if (file && file["name"].slice(-4) == ".pdf") {
+        if (file && file.name.slice(-4) == ".pdf") {
+            let randomDecimal = Math.random();
+            fileName = "input/"+file.name.slice(0, -4) + randomDecimal + file.name.slice(-4);
+            setFileName(fileName); //maybe hash the file name for extra security
+            console.log(fileName);
             setSelectedFile(file);  
-            uploadFile(file); //uncomment when testing is done
-            const filePath = `input/${file.name}`;
-            setFilePath(filePath);
+            //uploadFile(file); //uncomment when testing is done
             setFileState(1)
         }
         else {
@@ -30,9 +32,9 @@ export const Button = ({ className }) => {
     }
 
     return (
-        <div className="buttonWrapper">
+        <div className="buttonWrapper" onClick={() => handleClick()}>
             <input type="file" id="fileInput" style={{ display: "none" }} onChange={handleFileChange} />
-            <div className="button" onClick={() => handleClick()}>
+            <div className="button">
                 <File1 className="file" color="#F5F5F5" />
                 <button className="text-wrapper">Select File</button>
             </div>

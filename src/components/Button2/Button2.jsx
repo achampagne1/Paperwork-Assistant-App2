@@ -7,15 +7,12 @@ import { uploadFile } from '../../helpers/UploadFile'
 
 export const Button2 = ({ className }) => {
 
-    const { setPresignedUrl, selectedFile } = useContext(Context);
-    const { setFileReady } = useContext(Context);
-    //const { filePath } = useContext(Context);
+    const { setPresignedUrl, selectedFile, fileName, setFileReady } = useContext(Context);
     const [isRecording, setIsRecording] = useState(false);
     const [mediaRecorder, setMediaRecorder] = useState(null);
 
     const handleToggleRecording = async () => {
         if (!isRecording) {
-            // Request microphone access
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                 const recorder = new MediaRecorder(stream);
@@ -28,13 +25,11 @@ export const Button2 = ({ className }) => {
 
                 recorder.onstop = () => {
                     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    const filePath = `input/${selectedFile.name}`;
-                    audioFileName = filePath.slice(6, -4) + "_recording.wav"; //why do I remove the input/, then create the file, then add it back?
-                    console.log(audioFileName)
+                    audioFileName = fileName.slice(6, -4) + "_recording.wav"; //why do I remove the input/, then create the file, then add it back?
                     const audioFile = new File([audioBlob], audioFileName, { type: 'audio/wav' });
-                    uploadFile(audioFile); //uncommenting when done testing
+                    //uploadFile(audioFile); //uncommenting when done testing
                     audioFileName = "input/"+audioFileName;
-                    fetchURL(audioFileName);
+                    //fetchURL(audioFileName); //uncomment when done testing
                 };
 
                 recorder.start();
@@ -52,7 +47,7 @@ export const Button2 = ({ className }) => {
         //api payload
         const s3Event = {
             bucket: "paperworkassistantapd10c8a12ee344de389eeaea868936651-main",
-            file: `input/${selectedFile.name}`,
+            file: fileName,
             audio: audioFileName
         };
 

@@ -11,18 +11,14 @@ export const Button = ({ className }) => {
 
     const handleFileChange = async (event) => {
         const file = event.target.files[0];
-
-        if (file && file.name.slice(-4) == ".pdf") {
-            let randomDecimal = Math.random();
-            fileName = "input/"+file.name.slice(0, -4) + randomDecimal + file.name.slice(-4);
-            setFileName(fileName); //maybe hash the file name for extra security
-            console.log(fileName);
-            setSelectedFile(file);  
-            //uploadFile(file); //uncomment when testing is done
-            setFileState(1)
-        }
-        else {
-            setFileState(2)
+        let randomDecimal = Math.random();
+        fileName = "input/" + file.name.slice(0, -4) + randomDecimal + file.name.slice(-4);
+        const result = await uploadFile(file);
+        console.log(result);
+        setFileState(result);
+        if (result == 4 || result == 6) {
+            setFileName(fileName);
+            setSelectedFile(file); 
         }
     };
 

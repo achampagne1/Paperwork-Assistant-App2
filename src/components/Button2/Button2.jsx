@@ -4,6 +4,7 @@ import { Play } from "../../icons/Play";
 import "./Button2Style.css";
 import { uploadData } from 'aws-amplify/storage';
 import { uploadFile } from '../../helpers/UploadFile'
+import devTools from '../../../devTools.json';
 
 export const Button2 = ({ className }) => {
 
@@ -27,9 +28,9 @@ export const Button2 = ({ className }) => {
                     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
                     audioFileName = fileName.slice(6, -4) + "_recording.wav"; //why do I remove the input/, then create the file, then add it back?
                     const audioFile = new File([audioBlob], audioFileName, { type: 'audio/wav' });
-                    //uploadFile(audioFile); //uncommenting when done testing
+                    uploadFile(audioFile); 
                     audioFileName = "input/"+audioFileName;
-                    //fetchURL(audioFileName); //uncomment when done testing
+                    fetchURL(audioFileName); 
                 };
 
                 recorder.start();
@@ -44,6 +45,12 @@ export const Button2 = ({ className }) => {
     };
 
     function fetchURL(audioFileName) {
+
+        if (devTools.backendDisconnet) {
+            console.log('API error: backend disconnected');
+            return
+        }
+
         //api payload
         const s3Event = {
             bucket: "paperworkassistantapd10c8a12ee344de389eeaea868936651-main",

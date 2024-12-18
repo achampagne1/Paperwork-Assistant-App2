@@ -9,7 +9,8 @@ export const PdfContainer = ({ className }) => {
     const { fileState, selectedFile } = useContext(Context); // Get selectedFile from context
 
     useEffect(() => {
-        if (fileState !== 1) {
+        console.log(fileState);
+        if (fileState !== 4 && fileState !== 6) {
             return;
         }
 
@@ -67,9 +68,9 @@ export const PdfContainer = ({ className }) => {
 
     return (
         <div
-            className={`pdfContainer2 ${fileState === 1 ? "expanded" : "collapsed"}`}
+            className={`pdfContainer2 ${fileState === 4 || fileState === 6 ? "expanded" : "collapsed"}`}
         >
-            {fileState === 1 ? (
+            {fileState === 4 || fileState === 6 ? (
                 <canvas id="pdfCanvas"></canvas>
             ) : (
                 <TextBox />

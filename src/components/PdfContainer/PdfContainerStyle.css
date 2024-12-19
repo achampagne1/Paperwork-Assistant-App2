@@ -2,7 +2,8 @@
     max-width: 645px;
     overflow: auto;
     margin: 0 auto;
-    transition: height 0.3s ease; /* Smooth transition */
+    transition: height 0.3s ease; 
+    display: block;
 }
 
     .pdfContainer2.expanded {

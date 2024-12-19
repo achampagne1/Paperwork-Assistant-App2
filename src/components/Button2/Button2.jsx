@@ -26,10 +26,9 @@ export const Button2 = ({ className }) => {
 
                 recorder.onstop = () => {
                     const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    audioFileName = fileName.slice(6, -4) + "_recording.wav"; //why do I remove the input/, then create the file, then add it back?
+                    audioFileName = fileName.slice(0, -4) + "_recording.wav"; //why do I remove the input/, then create the file, then add it back?
                     const audioFile = new File([audioBlob], audioFileName, { type: 'audio/wav' });
-                    uploadFile(audioFile); 
-                    audioFileName = "input/"+audioFileName;
+                    uploadFile(audioFile,audioFileName); 
                     fetchURL(audioFileName); 
                 };
 

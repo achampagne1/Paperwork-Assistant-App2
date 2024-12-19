@@ -1,8 +1,8 @@
 ﻿import { uploadData } from 'aws-amplify/storage';
 import devTools from '../../devTools.json';
 
-export async function uploadFile(file) {
-    let filePath = "";
+export async function uploadFile(file, filePath) {
+
 
     console.log("Selected file:", file);
 
@@ -55,7 +55,7 @@ export async function uploadFile(file) {
             console.log('Upload error: backend disconnected');
             return 6;
         }
-        filePath = "input/" + file.name;
+
         const result = await uploadData({
             path: filePath,
             data: file,

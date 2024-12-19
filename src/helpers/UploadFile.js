@@ -1,10 +1,11 @@
 ﻿import { uploadData } from 'aws-amplify/storage';
 import devTools from '../../devTools.json';
+import { debugLog } from './DebugPrinter'
 
 export async function uploadFile(file, filePath) {
 
 
-    console.log("Selected file:", file);
+    debugLog("Selected file:", file);
 
     // File validation
     const allowedFileTypes = {
@@ -27,32 +28,30 @@ export async function uploadFile(file, filePath) {
     } else if (allowedFileTypes.wav.extensions.includes(fileExtension)) {
         fileType = allowedFileTypes.wav;
     } else {
-        console.log('Upload error: Invalid file type. Only PDF and WAV files are allowed.');
+        debugLog('Upload error: Invalid file type. Only PDF and WAV files are allowed.');
         return 1;
     }
 
     // Check MIME type
     if (file.type !== fileType.mimeType) {
-        console.log(`Upload error: Invalid MIME type. Expected ${fileType.mimeType}.`);
+        debugLog(`Upload error: Invalid MIME type. Expected ${fileType.mimeType}.`);
         return 2;
     }
 
     // Check file size
     if (file.size > fileType.maxSize) {
-        console.log(
-            `Upload error: File size exceeds the limit of ${fileType.maxSize / (1024 * 1024)} MB for ${fileExtension} files.`
-        );
+        debugLog(`Upload error: File size exceeds the limit of ${fileType.maxSize / (1024 * 1024)} MB for ${fileExtension} files.`);
         return 3;
     }
 
     if (devTools.backendDisconnet) {
-        console.log('Upload error: backend disconnected');
+        debugLog('Upload error: backend disconnected');
         return 6;
     }
 
     try {
         if (devTools.backendDisconnet) {
-            console.log('Upload error: backend disconnected');
+            debugLog('Upload error: backend disconnected');
             return 6;
         }
 
@@ -63,10 +62,10 @@ export async function uploadFile(file, filePath) {
                 level: 'public',
             },
         }).result;
-        console.log('Upload succeeded:', result);
+        debugLog('Upload succeeded:', result);
         return 4 
     } catch (error) {
-        console.log('Upload error:', error);
+        debugLog('Upload error:', error);
         return 5
     }
 }

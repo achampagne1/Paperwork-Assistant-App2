@@ -13,9 +13,7 @@ export const Button = ({ className }) => {
         const file = event.target.files[0];
         let randomDecimal = Math.random();
         fileName = "input/" + file.name.slice(0, -4) + randomDecimal + file.name.slice(-4);
-        console.log(fileName)
         const result = await uploadFile(file,fileName);
-        console.log(result);
         setFileState(result);
         if (result == 4 || result == 6) {
             setFileName(fileName);
